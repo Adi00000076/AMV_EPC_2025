@@ -75,8 +75,17 @@ const SidebarItems = () => {
     < >
       <MUI_Sidebar width={"100%"} showProfile={false} themeColor={"#5D87FF"} themeSecondaryColor={'#49beff'} >
 
-        <Logo img='' component={Link} to="/" sx={{ width: '200px' }}>INFYZ-EPC</Logo>
-        {/* <Logo img='/images/logos/www_logo.jpg' component={Link} to="/" >INFYZ-EPC</Logo> */}
+        
+        <Box display="flex" alignItems="center" justifyContent="center" p={2}>
+          <Logo img='' component={Link} to="/" sx={{ width: '200px' }}>INFYZ-EPC</Logo>
+          {/* <Logo
+            img="https://www.norbachina.com/sites/default/files/2020-10/wallenius-wilhelmsen-ocean-vector-logo.png"
+            width={140}
+            height={50}
+            text="INFYZ-EPC"
+          /> */}
+        </Box>
+
         {renderMenuItems(Menuitems, pathDirect)}
         <Box px={2}>
           <Upgrade />
