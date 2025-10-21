@@ -50,7 +50,7 @@ const Login2 = () => {
           alignItems="center"
           justifyContent="flex-end"
         >
-          <Grid item sx={{ maxWidth: "400px", width: "100%" }}>
+          <Grid sx={{ maxWidth: "400px", width: "100%" }}>
             <Card
               elevation={9}
               sx={{

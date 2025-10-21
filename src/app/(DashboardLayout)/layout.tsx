@@ -4,12 +4,8 @@ import React, { useState, Suspense } from "react";
 import dynamic from "next/dynamic";
 
 // Lazy load navigation components
-const Header = dynamic(() => import("@/app/(DashboardLayout)/layout/header/Header"), {
-  suspense: true,
-});
-const Sidebar = dynamic(() => import("@/app/(DashboardLayout)/layout/sidebar/Sidebar"), {
-  suspense: true,
-});
+const Header = dynamic(() => import("@/app/(DashboardLayout)/layout/header/Header"));
+const Sidebar = dynamic(() => import("@/app/(DashboardLayout)/layout/sidebar/Sidebar"));
 
 
 const MainWrapper = styled("div")(() => ({
