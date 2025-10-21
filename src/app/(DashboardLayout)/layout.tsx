@@ -36,6 +36,8 @@ export default function RootLayout({
 }) {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   return (
     <MainWrapper className="mainwrapper">
       {/* ------------------------------------------- */}
@@ -56,7 +58,7 @@ export default function RootLayout({
         {/* Header */}
         {/* ------------------------------------------- */}
         <Suspense fallback={<div>Loading Header...</div>}>
-          <Header toggleMobileSidebar={() => setMobileSidebarOpen(true)} />
+          <Header toggleMobileSidebar={() => setMobileSidebarOpen(true)} toggleSidebar={toggleSidebar} />
         </Suspense>
         {/* ------------------------------------------- */}
         {/* PageContent */}

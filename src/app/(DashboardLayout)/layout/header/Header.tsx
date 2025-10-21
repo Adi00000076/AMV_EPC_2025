@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 // components
 import Profile from './Profile';
-import { IconBellRinging, IconMenu } from '@tabler/icons-react';
+import { IconBellRinging, IconMenu, IconSettings } from '@tabler/icons-react';
 
 interface ItemType {
-  toggleMobileSidebar:  (event: React.MouseEvent<HTMLElement>) => void;
+  toggleMobileSidebar: (event: React.MouseEvent<HTMLElement>) => void;
+  toggleSidebar?: () => void;
 }
 
-const Header = ({toggleMobileSidebar}: ItemType) => {
+const Header = ({ toggleMobileSidebar, toggleSidebar }: ItemType) => {
 
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   // const lgDown = useMediaQuery((theme) => theme.breakpoints.down('lg'));
@@ -60,9 +61,25 @@ const Header = ({toggleMobileSidebar}: ItemType) => {
           </Badge>
 
         </IconButton>
+
+        <IconButton
+          size="large"
+          aria-label="toggle sidebar"
+          color="inherit"
+          onClick={toggleSidebar}
+          sx={{
+            display: {
+              lg: "inline",
+              xs: "none",
+            },
+          }}
+        >
+          <IconSettings size="21" stroke="1.5" />
+        </IconButton>
+
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
-          <Button variant="contained" component={Link} href="/authentication/login"   disableElevation color="primary" >
+          <Button variant="contained" component={Link} href="/authentication/login" disableElevation color="primary" >
             Login
           </Button>
           <Profile />
